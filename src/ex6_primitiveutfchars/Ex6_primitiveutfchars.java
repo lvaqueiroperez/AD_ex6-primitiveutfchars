@@ -27,9 +27,7 @@ public class Ex6_primitiveutfchars {
         //al usar métodos distintos, readUTF y readChars, no hace falta usar tantos buckes
         //readUTF terminará de leer cuando llegue a la siguiente cadena de distinto tipo
         //(readChar)
-        
-        //EJERCICIO ACABADO,ORDENAR BIEN
-        
+        //EJERCICIO ACABADO,ORDENAR BIEN y adornarlo
         //escritura
         FileOutputStream escribir = null;
         BufferedOutputStream escribirBuffer = null;
@@ -49,21 +47,20 @@ public class Ex6_primitiveutfchars {
         leerData = new DataInputStream(leerBuffer);
 
         String cadena = "Está en casa";
-        
+
         escribirData.writeUTF(cadena);
         escribirData.writeChars(cadena);
         escribirData.writeUTF(cadena);
         escribirData.close();
-        
-        System.out.println(leerData.readUTF());
-        for(int i = 0;i<cadena.length();i++){
-            
-            System.out.print(leerData.readChar());
-            
-        }
-        System.out.println("\n"+leerData.readUTF());
 
-    
+        System.out.println(leerData.readUTF());
+        for (int i = 0; i < cadena.length(); i++) {
+
+            System.out.print(leerData.readChar());
+
+        }
+        System.out.println("\n" + leerData.readUTF());
+
     }
 
 }
